@@ -11,6 +11,8 @@ accountPassword = "Anahand@123";
 accountCity = "Mumbai";
 
 console.log(accountId);
+// accountState ;
+
 
 
 console.table([accountId, accountEmail, accountPassword, accountCity]);
