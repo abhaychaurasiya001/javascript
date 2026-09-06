@@ -5,7 +5,7 @@
 
 # solution code
 
-## project 1
+## project 1 ...{case 1}
 
 ```javascript
 console.log("hitesh")
@@ -34,5 +34,76 @@ buttons.forEach(function(button){
   })
 
 })
+```
 
+## case2... by switch case|{project 1}
+```
+const buttons = document.querySelectorAll('.button');
+const body = document.querySelector('body');
+
+buttons.forEach(function(button){
+  console.log(button);
+  button.addEventListener('click',function(e){
+    console.log(e)
+    console.log(e.target)
+    switch (e.target.id) {
+      case 'blue':
+          body.style.backgroundColor = 'blue';
+          break;
+
+      case 'white':
+          body.style.backgroundColor = 'white';
+          break;
+
+      case 'yellow':
+          body.style.backgroundColor = 'yellow';
+          break;
+
+      case 'grey':
+          body.style.backgroundColor = 'grey';
+          break;
+      case 'red':
+          body.style.backgroundColor = 'red';
+          break;
+    }
+  });
+});          
+
+```
+
+## solution project 2 .... soluition sode for bmi indexing
+```
+const form = document.querySelector('form')
+
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+
+  const height = parseInt(document.querySelector('#height').value);
+  const weight = parseInt(document.querySelector('#weight').value);
+  const results = document.querySelector('#results');
+
+  if(height===''||height<0||isNaN(height)){
+    results.innerHTML=`give me valid height${height}`;
+
+  }else if(weight===''||weight<0||isNaN(weight)){
+    results.innerHTML=`give me valid weight${weight}`;
+  }else{
+    const bmi=(weight/((height*height)/10000)).toFixed(2)
+
+    // show the result
+    results.innerHTML=`<span>${bmi}</span>`;
+  }
+  const bmi=(weight/((height*height)/10000)).toFixed(2)
+
+  if(bmi<18){
+    results.innerHTML=`<span>${bmi}</span><br>underweight`
+    
+  }else if(bmi>=18&&bmi<=25){
+    results.innerHTML=`<span>${bmi}</span><br>normal weight`
+    
+  }else if (bmi>25){
+    results.innerHTML=`<span>${bmi}</span><br>overweight`
+  }
+
+});
 ```
